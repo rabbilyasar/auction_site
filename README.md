@@ -5,16 +5,16 @@ An auction site like ebay.
 
 # Docker
 ## Setup
-Step 1. Build docker container `docker-compose build`
-Step 2. Up the container `docker-compose up`
+Step 1. Build docker container `docker-compose build` <br/>
+Step 2. Up the container `docker-compose up` <br/>
 
 
 # Virtualenv
 ## Setup
 Step 1. clone the repository <br/>
 Step 2. Source the env file using `source env/bin/activate` <br/>
-step 4. install from requirements `pip install -r requirements.txt`
-Step 3. start the django server `cd auction_site && python manage.py runserver 0.0.0.0:8000`
+step 4. install from requirements `pip install -r requirements.txt` <br/>
+Step 3. start the django server `cd auction_site && python manage.py runserver 0.0.0.0:8000` <br/>
 
 ### Test
 - Run all the test cases `python manage.py test`
