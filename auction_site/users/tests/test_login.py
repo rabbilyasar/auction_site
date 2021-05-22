@@ -18,6 +18,6 @@ class LoginTest(TestCase):
         self.assertTemplateUsed(response, template_name='login.html')
 
     def test_login_success(self):
-        respone = self.client.post(self.login_url, self.credentials, format='text/html')
+        self.client.post(self.login_url, self.credentials, format='text/html')
         user = get_user_model().objects.get(email=self.credentials['email'])
-        self.assertTrue(user.is_active)
+        self.assertTrue(user.is_authenticated)
