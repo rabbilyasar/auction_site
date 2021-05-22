@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Add your auction item</h3>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        {{form.as_p}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock content %}
