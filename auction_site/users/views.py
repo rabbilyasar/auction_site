@@ -4,8 +4,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.urls.base import reverse
 from django.views.generic.edit import CreateView
-from datetime import datetime
-from .forms import CustomUserCreationForm, LoginForm
+from .forms import CustomUserCreationForm
 
 User = get_user_model()
 
@@ -20,6 +19,7 @@ class SignUpView(SuccessMessageMixin, CreateView):
 
     def get_success_url(self) -> str:
         return reverse('users:login')
+
 
 class LoginView(auth_views.LoginView):
     """Logs in a new user using django's default loginview

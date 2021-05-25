@@ -43,7 +43,8 @@ class Auction(models.Model):
 class Bid(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='bids')
     auction = models.ForeignKey(Auction, on_delete=models.CASCADE, related_name='bids')
-    bid_time = models.DateTimeField()
+    bid_time = models.DateTimeField(auto_now_add=True, blank=True)
+
     def __str__(self):
         return "USER_ID:" + str(self.user.id) + " AUCTION_ID:" + \
 			str(self.auction.id) + " " + str(self.bid_time)

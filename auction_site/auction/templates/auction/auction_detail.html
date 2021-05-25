@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content%}
+<p>Title: {{object.title}}</p>
+<p>Description: {{object.description}}</p>
+<p>Current bid: {{object.min_bid}}</p>
+
+<p>Starting Time: {{object.time_starting}}</p>
+<p>End Time: {{object.time_ending}}</p>
+<hr>
+<h5 class="text-center">Total Bids</h5>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+        <th scope="col">Email</th>
+        <th scope="col">Bid time</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for item in object.bids.all %}
+        <tr>
+            <td>{{item.user.email}}</td>
+            <td>{{item.bid_time}}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<hr>
+{% endblock %}
