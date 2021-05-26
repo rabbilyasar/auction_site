@@ -5,6 +5,9 @@
     {% for obj in object_list %}
     <div class="col">
         <div class="card shadow-sm">
+            {% if not obj.not_expired %}
+                <h5>WINNER: {{obj.bids.all.last.user.email}}</h5>
+            {% endif %}
             <img  class="bd-placeholder-img card-img-top" width="100%" height="225" src="{% if obj.image %}{{obj.image.url}}{% else %}No image{% endif %}" alt="No image">
             <div class="card-body">
             <h5 class="card-title">{{obj.title}}</h5>
@@ -14,7 +17,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                     <a href="{% url 'auction:auction-details' obj.id %}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
-                    {% if obj.is_expired %}
+                    {% if obj.not_expired %}
                         <a href="{% url 'auction:raise-bid' obj.id %}" type="button" class="btn btn-sm btn-outline-secondary">New Bid</a>
                     {% endif %}
                 </div>

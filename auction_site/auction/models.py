@@ -41,7 +41,7 @@ class Auction(models.Model):
         return "user_id: " + str(self.user) + "title: " + str(self.title)
 
     @property
-    def is_expired(self):
+    def not_expired(self):
         return timezone.now() < self.time_ending
 
 
