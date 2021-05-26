@@ -1,1 +1,1 @@
-web: gunicorn --chdir /home/rabbil/Dev/auction_site/auction_site app.wsgi --log-file -
+web: gunicorn auction_site/app.wsgi --log-file -
