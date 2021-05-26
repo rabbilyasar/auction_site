@@ -1,1 +1,1 @@
-web: gunicorn auction_site/app.wsgi --log-file -
+web: gunicorn --pythonpath auction_site app.wsgi --log-file -
