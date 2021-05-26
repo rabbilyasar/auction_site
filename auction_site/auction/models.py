@@ -33,7 +33,7 @@ class Auction(models.Model):
     image = models.ImageField(upload_to='images/')
     min_bid = models.DecimalField(max_digits=6, decimal_places=2)
     date_posted = models.DateTimeField(auto_now_add=True, blank=True)
-    number_of_bids = models.IntegerField()
+    number_of_bids = models.IntegerField(default=0)
     time_starting = models.DateTimeField(auto_now_add=True, blank=True)
     time_ending = models.DateTimeField()
 

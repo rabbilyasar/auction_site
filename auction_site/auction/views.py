@@ -36,7 +36,6 @@ class AuctionCreateView(LoginRequiredMixin, generic.CreateView):
         user = get_user_model().objects.get(id=self.request.user.id)
         form.instance.user = user
         form.instance.time_ending = datetime.now()+timedelta(days=5)
-        form.instance.number_of_bids = 3
         return super(AuctionCreateView, self).form_valid(form)
 
 
