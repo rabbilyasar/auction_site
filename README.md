@@ -31,6 +31,8 @@ Step 3. start the django server `cd auction_site && python manage.py runserver 0
 - A user can create a new auction by clicking the button "Add new auction"
 
 
-# Todo
-- feature to bid 
-- expire auction after the elapsed time and notify the winner of the auction
+## How to use
+- After registering one can make new bids by adding their bid and setting up a minimum bid price.
+- Once published anyone can bid on the product.
+- The end date for a bid is automatically set to 5days.
+- After the date is expired the latest user is chosen as the winner.
