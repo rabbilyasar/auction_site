@@ -1,5 +1,6 @@
-from django.db import models
 from django.contrib.auth import get_user_model
+from django.db import models
+from django.utils import timezone
 
 User = get_user_model()
 
@@ -38,6 +39,10 @@ class Auction(models.Model):
 
     def __str__(self) -> str:
         return "user_id: " + str(self.user) + "title: " + str(self.title)
+
+    @property
+    def is_expired(self):
+        return timezone.now() < self.time_ending
 
 
 class Bid(models.Model):

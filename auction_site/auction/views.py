@@ -23,9 +23,6 @@ class AuctionListView(LoginRequiredMixin, generic.ListView):
         print(dir(self))
         context = super().get_context_data(**kwargs)
         context['request'] = self.request
-        # if auction.time_ending > datetime.now():
-        #     context['is_expired'] = True
-        context['now'] = datetime.now()
         return context
 
 
